@@ -1,0 +1,97 @@
+.portfolio-section {
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #fff;
+  padding: 20px; /* Reduced padding */
+  height: 100vh; /* Ensure it fits one screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.portfolio-title {
+  font-size: 2rem; /* Reduced font size */
+  margin-bottom: 20px; /* Reduced margin */
+  color: #f0db4f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.portfolio-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced gap */
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+.portfolio-tab {
+  background: none;
+  border: 2px solid #f0db4f;
+  color: #f0db4f;
+  font-size: 0.9rem; /* Reduced font size */
+  cursor: pointer;
+  padding: 5px 15px; /* Reduced padding */
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-tab.active,
+.portfolio-tab:hover {
+  background: #f0db4f;
+  color: #1a1a1a;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns */
+  gap: 10px; /* Reduced gap */
+  width: 100%;
+  max-width: 800px; /* Reduced max width */
+}
+
+.portfolio-card {
+  background: #222;
+  border-radius: 10px; /* Reduced border radius */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Reduced shadow */
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px); /* Reduced hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.portfolio-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-image-wrapper img {
+  width: 100%;
+  height: 150px; /* Reduced height */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-image-wrapper img {
+  transform: scale(1.05); /* Reduced zoom effect */
+}
+
+.portfolio-info {
+  padding: 10px; /* Reduced padding */
+  text-align: center;
+}
+
+.portfolio-info h3 {
+  margin: 0;
+  font-size: 1rem; /* Reduced font size */
+  color: #f0db4f;
+}
+
+.portfolio-info p {
+  margin-top: 5px; /* Reduced margin */
+  font-size: 0.8rem; /* Reduced font size */
+  color: #ccc;
+}

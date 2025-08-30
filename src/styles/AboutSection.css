@@ -1,0 +1,102 @@
+.about-section {
+    font-family: 'Libre Franklin', sans-serif; /* Ensure proper font usage */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 98vh; /* Full viewport height */
+    position: relative; /* Ensure child elements like .txt-box are positioned correctly */
+}
+
+
+
+
+
+
+
+
+
+section{
+    .img3{
+        position: absolute;
+
+        /* z-index: 10; */
+
+        img{
+            margin-left: 57%;
+            border-radius: 50px 300px 300px 50px;
+            width: 45%;
+            height: 30%; 
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+
+.txt-box{
+    z-index: 1;
+    color: #8aaa8b;
+    position: absolute;
+    margin-right: 19%;
+    /* background-color: #46612c; */
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    padding: 1.2rem 3rem;
+    width: 25%;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    height: 65%;
+}
+.txt-box h1{
+    /* font-size: 2.5rem; */
+    font-weight: 400;
+    /* color: #1E3A8A; */
+}
+.txt-box p{
+    font-size: 1.5rem;
+    font-weight: 400;
+  
+}
+.txt-box span{
+    font-size: 3.3rem;
+    font-weight: 500; 
+  
+}
+.btn1 {
+    color: #020e03;
+    padding: 1rem 2.9rem;
+    font-size: 1rem;
+    border: 2px solid #8aaa8b; /* Add a 2px solid border with a green color */
+    border-radius: 90px; /* Optional: Add rounded corners */
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+.img2 {
+    padding-left: 30%;
+    width: 40%;
+    height: 70%;
+    padding-top:0px;
+    margin-right: 2%;
+    /* height: auto; */
+    /* object-fit: cover; */
+}
+
+.hollow-square1 {
+    position: relative; /* Position it relative to the nearest positioned ancestor */
+    top:calc(30% + 550px); /* Align it to the bottom */
+    left: 40%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 40px; /* Set the width of the square */ /* Set the height of the square */
+    border: 4px solid #1C6220; /* Add a border with your desired color */
+    background-color: transparent; /* Ensure the inside is hollow */
+    display: inline-block; /* Optional: Makes it behave like an inline element */
+    z-index: 1; /* Ensure it is above the background but below other content */
+    /* top: 30; */
+    padding-top: 15%;
+    /* margin-bottom:75% ; */
+}
