@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section id='hero' className="hero-section">
       
       <div className="img1 floating-img slide-up">
-        <img src="./src/assets/overhead shot of use.png" alt="" />
+        <img src="/assets/overhead shot of use.png" alt="" />
       </div>
 
       <div className="hollow-square nav"></div>
