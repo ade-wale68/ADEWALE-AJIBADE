@@ -55,13 +55,12 @@
     background-position: center;
     color: white;
 
-    .img1{
-        /* border-radius: 90px; */
+    /* .img1{
         padding-top: 10%;
         margin-left: 14%;
         position: relative;
         z-index: 5;
-    }
+    } */
     img{
         border-top: 120px;
         border-radius: 300px 30px;
