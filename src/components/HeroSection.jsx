@@ -15,7 +15,7 @@ const HeroSection = () => {
       <div className="hero-content">
         {/* <h1>WELCOME TO DANIEL ADEWALE .A.</h1> */}
         <p id='typing-text'>
-          Discover the expertise of <br />
+          Discover the expertise <br />
           Daniel Adewale .A.
         </p>
 
