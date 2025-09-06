@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section id='hero' className="hero-section">
       
       <div className="img1 floating-img slide-up">
-        <img src="public/assets/overhead shot of use.png" alt="" />
+        <img src="/assets/overhead shot of use.png" alt="" />
       </div>
 
       <div className="hollow-square nav"></div>
@@ -19,11 +19,9 @@ const HeroSection = () => {
           Daniel Adewale .A.
         </p>
 
-        <a href="#projects" className="cta-button">VIEW_PORTFOLIO</a>
+        <a href="#tech-stack" className="cta-button">VIEW_PORTFOLIO</a>
 
-        <div className="scroll-indicator">
-          <a href="#hero">↓</a>
-        </div>
+
       </div>
       
     </section>

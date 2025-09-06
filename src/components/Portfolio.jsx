@@ -43,7 +43,7 @@ const Portfolio = () => {
         {filteredItems.map((item, index) => (
           <div className="portfolio-card" key={index}>
             <div className="portfolio-image-wrapper">
-              <img src={`../src/assets/${item.image}`} alt={item.title} />
+              <img src={`/assets/${item.image}`} alt={item.title} />
             </div>
             <div className="portfolio-info">
               <h3>{item.title}</h3>

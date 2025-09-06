@@ -4,11 +4,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #1a1a1a, #333); /* Dark gradient background */
+    /* background: linear-gradient(135deg, #1a1a1a, #333); Dark gradient background */
     text-align: center;
     padding: 2rem;
     color: #fff; /* White text for contrast */
 }
+.dotted {
+  border: none;              /* remove default style */
+  border-top: 2px dotted #333; /* thickness, style, color */
+  margin: 20px 0;            /* spacing */
+  width: 50%;                 /* width */
+  height: 4px;                /* height */
+}
+
 
 .tech-stack .content {
     margin-bottom: 2rem;

@@ -19,7 +19,7 @@ const AboutSection = () => {
             <a href="#tech-stack" className="cta-button">GET IN TOUCH</a>
             {/* <a href="#projects" className="btn1">GET IN TOUCH</a> */}
             </div>
-            <div className="img3 floating-img"><img src="../src/assets/overhead shot of use.png" alt="" /></div>
+            <div className="img3 floating-img"><img src="/assets/overhead shot of use.png" alt="" /></div>
         </section>
     );
 };

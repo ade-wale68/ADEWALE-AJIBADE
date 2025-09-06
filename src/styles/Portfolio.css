@@ -1,38 +1,37 @@
 .portfolio-section {
-  background: linear-gradient(135deg, #1a1a1a, #333);
+
   color: #fff;
-  padding: 20px; /* Reduced padding */
-  height: 100vh; /* Ensure it fits one screen */
+  padding: 60px 40px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  overflow: hidden; /* Prevent overflow */
 }
 
 .portfolio-title {
-  font-size: 2rem; /* Reduced font size */
-  margin-bottom: 20px; /* Reduced margin */
+  font-size: 3rem;
+  margin-bottom: 30px;
   color: #f0db4f;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .portfolio-tabs {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Reduced gap */
-  margin-bottom: 20px; /* Reduced margin */
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
 .portfolio-tab {
   background: none;
   border: 2px solid #f0db4f;
   color: #f0db4f;
-  font-size: 0.9rem; /* Reduced font size */
+  font-size: 1rem;
   cursor: pointer;
-  padding: 5px 15px; /* Reduced padding */
-  border-radius: 15px;
+  padding: 10px 20px;
+  border-radius: 20px;
   transition: all 0.3s ease;
 }
 
@@ -44,23 +43,23 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns */
-  gap: 10px; /* Reduced gap */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   width: 100%;
-  max-width: 800px; /* Reduced max width */
+  max-width: 1200px;
 }
 
 .portfolio-card {
   background: #222;
-  border-radius: 10px; /* Reduced border radius */
+  border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Reduced shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-card:hover {
-  transform: translateY(-5px); /* Reduced hover effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
 }
 
 .portfolio-image-wrapper {
@@ -70,28 +69,28 @@
 
 .portfolio-image-wrapper img {
   width: 100%;
-  height: 150px; /* Reduced height */
+  height: 200px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .portfolio-card:hover .portfolio-image-wrapper img {
-  transform: scale(1.05); /* Reduced zoom effect */
+  transform: scale(1.1);
 }
 
 .portfolio-info {
-  padding: 10px; /* Reduced padding */
+  padding: 20px;
   text-align: center;
 }
 
 .portfolio-info h3 {
   margin: 0;
-  font-size: 1rem; /* Reduced font size */
+  font-size: 1.5rem;
   color: #f0db4f;
 }
 
 .portfolio-info p {
-  margin-top: 5px; /* Reduced margin */
-  font-size: 0.8rem; /* Reduced font size */
+  margin-top: 10px;
+  font-size: 1rem;
   color: #ccc;
 }
