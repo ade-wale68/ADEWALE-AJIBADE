@@ -1,4 +1,8 @@
+/* ------------------------------
+   Animations
+------------------------------ */
 
+/* Floating animation for image */
 .floating-img {
   animation: float 2s ease-in-out infinite;
 }
@@ -7,120 +11,82 @@
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
+
+/* Slide-up animation */
 .slide-up {
-  opacity: 0i;
+  opacity: 1;
   transform: translateY(50px);
-  transition: all 10s ease-in;
+  transition: all 1s ease-in;
 }
 
 .slide-up.visible {
   opacity: 1;
-  transform: translateY(1);
-}
-.scroll-indicator {
-    margin-left: 40%;
-  position: fixed;
-  width: 6%;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  background: transparent;
-  border: none;
-  border-radius: 9000px 9000px 9000px 9000px;
-  color: white;
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  z-index: 1000;
-  /* padding: 20px; */
+  transform: translateY(0);
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0) translateX(-50%); }
-  50% { transform: translateY(-10px) translateX(-50%); }
+/* Gradient Border Animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
 }
 
-.scroll-indicator:hover {
-  transform: translateX(-50%) scale(1.2);
-}
+
+/* ------------------------------
+   Hero Section
+------------------------------ */
 .hero-section {
-    margin-right: 20%;
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: center;
-    height: 98vh;
-    background-color:#46612c ;
-    background-size: cover;
-    background-position: center;
-    color: white;
-
-    /* .img1{
-        padding-top: 10%;
-        margin-left: 14%;
-        position: relative;
-        z-index: 5;
-    } */
-    img{
-      margin-top: 200px;
-        border-top: 120px;
-        border-radius: 300px 30px;
-        width: 45%;
-        height: 30%;
-        z-index: 1;
-    }
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 98vh;
+  background-color: #46612c;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
 }
+
+/* Hero Image */
+.hero-section img {
+  margin-top: 200px;
+  border-radius: 300px 30px;
+  width: 45%;
+  max-width: 500px;
+  height: auto;
+  z-index: 1;
+}
+
+/* Hero Text */
 .hero-content {
-    padding-top: 9%;
-    margin-left: 40%;
-    display: flex;
-        position: absolute;
-    flex-direction: column; /* Stack items vertically */
-    gap: 0.1rem; /* Add space between items */
-    z-index:5;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 5;
+  text-align: left;
+}
 
-    
-}
-.hero-content h1,
-.hero-content p,
-.cta-button {
-    letter-spacing: 0.09rem;
-    font-weight: 550; /* Make the font bold */
-    color: white;
-    font-family: 'Libre Franklin', sans-serif;
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-}
-.hero-content h1 {
-    font-size: 1.1rem;
-    
-
-}
 .hero-content p {
-    font-size: 2.9rem;
-    font-weight: 400;
-
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.09rem;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
-
-
-/* Base button style */
-button, 
+/* CTA Button */
 .cta-button {
-    font-family: 'Libre Franklin', sans-serif; /* Ensure proper font usage */
-    font-size: 1.2rem; /* Adjust the size as needed */
-    color: white; /* Text color */
-    background-color: transparent; /* Default background */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
   display: inline-block;
-  width: 33%;
+  margin-top: 1rem;
+  width: fit-content;
   padding: 0.8em 1.6em;
+  font-size: 1.2rem;
   font-weight: 600;
   border-radius: 30px;
-  border: none;
   background: linear-gradient(135deg, #1e682e, #3ba74f);
   color: #fff;
   text-decoration: none;
@@ -128,56 +94,120 @@ button,
   transition: all 0.3s ease;
 }
 
-/* Hover effect */
-button:hover, 
 .cta-button:hover {
   transform: scale(1.07);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35),
               0 0 15px rgba(59, 167, 79, 0.6);
-  background: linear-gradient(135deg, #3ba74f, #1e682e);
 }
 
-/* Optional: active state */
-button:active,
-.cta-button:active {
-  transform: scale(0.98);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-
-.hollow-square{
-    position: absolute; /* Position it relative to the nearest positioned ancestor */
-    top: calc(1% + 410px); /* Place it below the .txt-box with some spacing */
-    left: 57%; /* Center it horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    width: 45%; /* Set the width of the square */
-    height: 100px; /* Set the height of the square */
-    border: 4px solid #205323; /*   Add a border with your desired color */
-    background-color: transparent; /* Ensure the inside is hollow */
-    display: inline-block; /* Optional: Makes it behave like an inline element */
-    z-index: -1; /* Ensure it is above the background but below other content */
-    padding-top: 10%;
-    top: 1;
-    border-width: 10px;
+/* Hollow Square Decoration */
+.hollow-square {
+  position: absolute;
+  top: 420px;
+  left: 57%;
+  transform: translateX(-50%);
+  width: 45%;
+  height: 100px;
+  border: 10px solid #205323;
+  background-color: transparent;
+  z-index: -1;
 }
 
 
+/* ------------------------------
+   Animated Gradient Border
+------------------------------ */
+.border-wrapper {
+  padding: 4rem 12px; /* border thickness */
+  border-radius: 2000px;
+  background: linear-gradient(
+    90deg,
+    #ff0057,
+    #ff7b00,
+    #ffea00,
+    #00ff85,
+    #00c3ff,
+    #bd00ff,
+    #ff0057
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 8s linear infinite;
+  display: inline-block;
+}
+
+.border-content {
+  background: linear-gradient(135deg, #1e682e, #3ba74f);
+  border-radius: 200px;
+  padding: 1.3rem 2rem;
+  color: white;
+  text-align: center;
+}
 
 
+/* ------------------------------
+   Responsive Design
+------------------------------ */
 
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
 
+  .hero-section img {
+    width: 60%;
+    margin-top: 50px;
+  }
 
+  .hero-content {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+    text-align: center;
+  }
 
+  .hero-content p {
+    font-size: 1.8rem;
+    font-family: 'Libre Franklin', sans-serif;
+  }
+}
 
+/* Tablets & large phones */
+@media (max-width: 768px) {
+  .hero-section img {
+    width: 70%;
+  }
 
+  .hero-content p {
+    font-size: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 0.09rem;
+    font-family: 'Libre Franklin', sans-serif;
+  }
 
+  .cta-button {
+    margin-left: 13%;
+    font-size: 1.3rem;
+    padding: 0.6em 1.2em;
+    font-family: 'Libre Franklin', sans-serif;
+  }
+}
 
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-section img {
+    width: 80%;
+  }
 
+  .hero-content p {
+    font-size: 1.2rem;
+  }
 
-
-
-
-
-
-
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
+  }
+}

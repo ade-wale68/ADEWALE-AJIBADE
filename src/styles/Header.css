@@ -1,69 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap');
+/* ------------------- Animations ------------------- */
 
+/* Slide-up animation */
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(-10px) translateX(-50%); }
+}
+
+/* ------------------- Scroll Indicator ------------------- */
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 40%;
+  width: 6%;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 1000;
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) scale(1.2);
+}
+
+/* ------------------- Header ------------------- */
 header {
-    display: inline;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: transparent;
 }
 
-nav {
-    background: linear-gradient(135deg, #1a1a1a, #333); /* Updated to match other pages */
-    background-size: 400% 400%;
-    animation: gradientShift 4s ease infinite;
-    border-radius: 0px 0px 100px 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
+/* Header Title */
 .header-title h2 {
-    position: absolute;
-    margin-left: 20%;
-    color: #f0db4f; /* Highlighted yellow for text */
-    font-family: "MV Boli";
-    font-weight: 700; /* Bold weight */
-    font-size: 2rem; /* Adjust the size as needed */
-    justify-content: center;
-    margin-top: 2%;
-    width: auto; /* Adjust the width dynamically */
-    text-align: center; /* Center the text */
+  color: #f0db4f;
+  font-family: "MV Boli", cursive;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
 }
 
-nav {
+/* ------------------- Navigation ------------------- */
+/* Default (Desktop) */
+.header-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-nav a {
+  font-family: "Segoe Script", cursive;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  border-bottom: 3px solid #f0db4f;
+  color: #f0db4f;
+}
+
+/* ------------------- Hamburger ------------------- */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  cursor: pointer;
+  z-index: 1001;
+  position: absolute;
+  left: 20px;  /* keep it top-left */
+  top: 20px;
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger transform to "X" */
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ------------------- Responsive Menu ------------------- */
+@media (max-width: 768px) {
+  .hamburger-menu {
     display: flex;
-    gap: 2rem;
-    align-items: center;
-    font-family: "Segoe Script";
+  }
+
+  .header-nav {
     position: fixed;
-    margin-left: 55%;
-    height: 5vh;
-    width: 28%;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
     top: 0;
-    z-index: 100;
-    backdrop-filter: blur(10%);
-    transition: background-color 0.3s ease;
-}
+    left: -100%; /* hide offscreen by default */
+    height: 100vh;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background: #1a1a1a;
+    padding: 2rem;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
+  }
 
-nav a {
-    font-family: "Segoe Script"; /* Apply the font to navigation links */
-    font-weight: 400; /* Regular weight */
-    text-decoration: none; /* Remove default underline */
-    color: #ccc; /* Light gray for text */
-    position: relative; /* Required for the border effect */
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
+  .header-nav.open {
+    left: 0; /* slide in from left */
+  }
 
-nav a:hover {
-    border-bottom: 4px solid #f0db4f; /* Yellow underline on hover */
-    color: #f0db4f; /* Yellow text on hover */
-}
-
-nav a.active {
-    border-bottom: 4px solid #f0db4f; /* Yellow underline for active link */
-    color: #f0db4f; /* Yellow text for active link */
+  .nav-link {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }

@@ -1,29 +1,25 @@
 import React from 'react';
 import '../styles/HeroSection.css';
-// import "../styles/style.css"
 
 const HeroSection = () => {
   return (
-    <section id='hero' className="hero-section">
-      
+    <section id="hero" className="hero-section">
       <div className="img1 floating-img slide-up">
-        <img src="/assets/overhead shot of use.png" alt="" />
+        <img src="/assets/overhead shot of use.png" alt="Overhead Shot" />
       </div>
 
       <div className="hollow-square nav"></div>
 
       <div className="hero-content">
-        {/* <h1>WELCOME TO DANIEL ADEWALE .A.</h1> */}
-        <p id='typing-text'>
+        <p id="typing-text">
           Discover the expertise of <br />
           Daniel Adewale .A.
         </p>
 
-        <a href="#tech-stack" className="cta-button">VIEW_PORTFOLIO</a>
-
-
+        <a href="#tech-stack" className="cta-button border-wrapper">
+            <div className="border-content"> VIEW_PORTFOLIO</div>
+        </a>
       </div>
-      
     </section>
   );
 };
