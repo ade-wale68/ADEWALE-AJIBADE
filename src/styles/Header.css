@@ -121,6 +121,7 @@ header {
 @media (max-width: 768px) {
   .hamburger-menu {
     display: flex;
+    left: 85%;
   }
 
   .header-nav {

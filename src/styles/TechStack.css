@@ -9,12 +9,23 @@
     padding: 2rem;
     color: #fff; /* White text for contrast */
 }
-.dotted {
-  border: none;              /* remove default style */
-  border-top: 2px dotted #333; /* thickness, style, color */
-  margin: 20px 0;            /* spacing */
-  width: 50%;                 /* width */
-  height: 4px;                /* height */
+.fancy-hr {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+}
+.fancy-hr::before,
+.fancy-hr::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid #ccc;
+}
+.fancy-hr span {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #f0db4f;
+  font-weight: bold;
 }
 
 

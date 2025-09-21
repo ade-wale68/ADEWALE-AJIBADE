@@ -25,7 +25,8 @@ const TechStack = () => {
                     Here are the technologies I use to build amazing web applications. Each tool plays a vital role in creating seamless, efficient, and visually appealing projects.
                 </p>
             </div>
-            <hr className="dotted" />
+<div class="fancy-hr"><span>✦✦✦✦✦✦✦✦✦✦✦</span></div>
+
             <div className="tech-grid">
                 {technologies.map((tech, index) => (
                     <div key={index} className="tech-item" title={tech.name}>

@@ -23,6 +23,8 @@ const AboutSection = () => {
       <div className="img3 floating-img">
         <img src="/assets/overhead shot of use.png" alt="Daniel Adewale" />
       </div>
+      <hr className="gradient-line" />
+
     </section>
   );
 };

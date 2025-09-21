@@ -9,6 +9,13 @@
   position: relative;
   flex-wrap: wrap; /* ensures stacking on smaller screens */
 }
+.gradient-line {
+  border: none;
+  height: 3px;
+  width: 10px;
+  background: linear-gradient(90deg, #ff0080, #7928ca, #00dbde);
+  border-radius: 10px;
+}
 
 /* Text Section */
 .txt-box {
