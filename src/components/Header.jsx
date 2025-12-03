@@ -38,6 +38,9 @@ const Header = () => {
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-title">
         <h2 className="brand-name">AJIBADE DANIEL. A.</h2>
+       {/* <button id="theme-toggle">Toggle Dark/Light Mode</button> */}
+
+
       </div>
 
       {/* Hamburger Menu */}

@@ -150,3 +150,16 @@ spd.on('change', function(ev) {
   startImageInterval();
 });
 
+// Dark/Light mode toggle
+const themeButton = document.getElementById("theme-toggle");
+
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // Optional: update button text
+  if (document.body.classList.contains("dark-mode")) {
+    themeButton.textContent = "Switch to Light Mode";
+  } else {
+    themeButton.textContent = "Switch to Dark Mode";
+  }
+});

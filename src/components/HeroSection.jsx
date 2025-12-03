@@ -4,7 +4,7 @@ import "../styles/HeroSection.css";
 import heroImage from "/assets/overhead shot of use.png";
 
 const HeroSection = () => {
-  const fullText = "Discover the expertise of Daniel Adewale A.";
+  const fullText = "Diiscover the expertise of Daniel Adewale A.";
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
@@ -31,10 +31,7 @@ const HeroSection = () => {
 
       {/* Hero Text */}
       <div className="hero-content">
-        <p id="typing-text">
-          {displayedText}
-          <span className="highlighted-name"></span>
-        </p>
+        <p id="typing-text">{displayedText}</p> {/* Removed the empty span */}
 
         {/* Social Icons */}
         <div className="social-links1">

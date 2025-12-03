@@ -7,17 +7,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  background: #1a1a1a(255, 55, 255, 0.89);
+  backdrop-filter: blur(40px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .hero-section.scrolled {
-  /* background-color: rgba(70, 97, 44, 0.0); fully transparent */
+  background-color: rgba(70, 97, 44, 0.0); /* fully transparent */
   box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* subtle shadow */
 }
 
@@ -26,8 +26,8 @@
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #2E2E2E;
-  font-family: "Poppins", sans-serif;
+  color: #f0db4f;
+  font-family: "cooper std";
 }
 
 /* ---------------------------------
