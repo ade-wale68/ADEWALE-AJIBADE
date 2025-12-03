@@ -45,15 +45,15 @@ const Header = () => {
 
       {/* Navigation */}
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
-        <a className={`nav-link ${activeSection === 'hero' ? 'active' : ''}`} href="#hero" onClick={() => setMenuOpen(false)}>HOME</a>
-        <a className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} href="#about" onClick={() => setMenuOpen(false)}>ABOUT</a>
-        <a className={`nav-link ${activeSection === 'tech-stack' ? 'active' : ''}`} href="#tech-stack" onClick={() => setMenuOpen(false)}>TECH STACK</a>
-        <a className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} href="#contact" onClick={() => setMenuOpen(false)}>CONTACT</a>
+        <a className={`nav-link ${activeSection === 'hero' ? 'active' : ''}`} href="#hero" onClick={() => setMenuOpen(false)}>HOME |</a>
+        <a className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} href="#about" onClick={() => setMenuOpen(false)}>ABOUT |</a>
+        <a className={`nav-link ${activeSection === 'tech-stack' ? 'active' : ''}`} href="#tech-stack" onClick={() => setMenuOpen(false)}>TECH STACK |</a>
+        <a className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} href="#contact" onClick={() => setMenuOpen(false)}>CONTACT |</a>
 
-        {/* Extra pages */}
+        {/* Extra pages
         <a className="nav-link" href="/portfolio" onClick={() => setMenuOpen(false)}>PORTFOLIO</a>
         <a className="nav-link" href="/blog" onClick={() => setMenuOpen(false)}>BLOG</a>
-        <a className="nav-link" href="/services" onClick={() => setMenuOpen(false)}>SERVICES</a>
+        <a className="nav-link" href="/services" onClick={() => setMenuOpen(false)}>SERVICES</a> */}
       </nav>
     </header>
   );
