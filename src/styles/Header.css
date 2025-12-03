@@ -2,7 +2,7 @@
       GLOBAL HEADER STYLING
 ----------------------------------*/
 .header {
-  width: 100%;
+  width: 90%;
   padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
