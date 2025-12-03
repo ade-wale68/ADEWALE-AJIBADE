@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-title">
-        <h2>AJIBADE DANIEL .A.</h2>
+        <h2>AJIBADE DAN .A.</h2>
       </div>
 
       {/* Hamburger Icon */}
