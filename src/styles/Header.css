@@ -1,150 +1,159 @@
-/* ------------------- Animations ------------------- */
-
-/* Slide-up animation */
-.slide-up {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-in-out;
-}
-
-.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Scroll indicator bounce */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0) translateX(-50%); }
-  50% { transform: translateY(-10px) translateX(-50%); }
-}
-
-/* ------------------- Scroll Indicator ------------------- */
-.scroll-indicator {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-left: 40%;
-  width: 6%;
-  font-size: 2rem;
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  z-index: 1000;
-}
-
-.scroll-indicator:hover {
-  transform: translateX(-50%) scale(1.2);
-}
-
-/* ------------------- Header ------------------- */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* ---------------------------------
+      GLOBAL HEADER STYLING
+----------------------------------*/
+.header {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
-  background: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Header Title */
-.header-title h2 {
-  color: #f0db4f;
-  font-family: "MV Boli", cursive;
+/* Brand Name */
+.brand-name {
+  font-size: 1.4rem;
   font-weight: 700;
-  font-size: 1.8rem;
-  margin: 0;
+  letter-spacing: 1px;
+  color: #2E2E2E;
+  font-family: "Poppins", sans-serif;
 }
 
-/* ------------------- Navigation ------------------- */
-/* Default (Desktop) */
-.header-nav {
+/* ---------------------------------
+          NAVIGATION (DESKTOP)
+----------------------------------*/
+.nav {
   display: flex;
-  gap: 2rem;
   align-items: center;
+  gap: 1.2rem;
+  transition: 0.4s ease-in-out;
 }
 
-.header-nav a {
-  font-family: "Segoe Script", cursive;
-  color: #ccc;
+.nav-link {
   text-decoration: none;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  color: #3a3a3a;
+  font-weight: 500;
+  padding: 6px 10px;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s ease;
+  position: relative;
 }
 
-.header-nav a:hover,
-.header-nav a.active {
-  border-bottom: 3px solid #f0db4f;
-  color: #f0db4f;
+/* Hover effect */
+.nav-link:hover {
+  color: #4A90E2;
 }
 
-/* ------------------- Hamburger ------------------- */
-.hamburger-menu {
-  display: none;
-  flex-direction: column;
-  gap: 0.4rem;
-  cursor: pointer;
-  z-index: 1001;
+/* Active indicator */
+.nav-link.active {
+  color: #4A90E2;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: "";
   position: absolute;
-  left: 20px;  /* keep it top-left */
-  top: 20px;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4A90E2;
+  animation: fadeIn 0.3s ease;
 }
 
-.hamburger-menu .bar {
+@keyframes fadeIn {
+  from { width: 0; opacity: 0; }
+  to   { width: 100%; opacity: 1; }
+}
+
+/* Divider (desktop only) */
+.divider {
+  color: #bfbfbf;
+  font-weight: 300;
+  user-select: none;
+}
+
+/* ---------------------------------
+           HAMBURGER MENU
+----------------------------------*/
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger .bar {
   width: 25px;
   height: 3px;
-  background: #fff;
+  background: #2E2E2E;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: 0.4s ease;
 }
 
-/* Hamburger transform to "X" */
-.hamburger-menu.open .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+/* Turn into X */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
 }
 
-.hamburger-menu.open .bar:nth-child(2) {
+.hamburger.open .bar:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger-menu.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ------------------- Responsive Menu ------------------- */
-@media (max-width: 768px) {
-  .hamburger-menu {
+/* ---------------------------------
+            MOBILE NAVIGATION
+----------------------------------*/
+@media (max-width: 900px) {
+  .hamburger {
     display: flex;
-    left: 85%;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    z-index: 1100;
   }
 
-  .header-nav {
-    position: fixed;
-    top: 0;
-    left: -100%; /* hide offscreen by default */
-    height: 100vh;
-    width: 70%;
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(255, 255, 255, 0.92);
     flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    background: #1a1a1a;
-    padding: 2rem;
-    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease;
+    width: 220px;
+    padding: 1.2rem;
+    transform: translateX(120%);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    transition: 0.4s ease-in-out;
   }
 
-  .header-nav.open {
-    left: 0; /* slide in from left */
+  .nav.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
   }
 
   .nav-link {
-    font-size: 1.5rem;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  .divider {
+    display: none;
   }
 }

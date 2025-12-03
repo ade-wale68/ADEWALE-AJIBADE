@@ -1,59 +1,76 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Header.css';
+import React, { useState, useEffect } from "react";
+import "../styles/Header.css";
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Highlight active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'tech-stack', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const sections = ["hero", "about", "tech-stack", "contact"];
+      const position = window.scrollY + 120;
 
-      sections.forEach((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+        if (!section) return;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-          }
+        const start = section.offsetTop;
+        const end = start + section.offsetHeight;
+
+        if (position >= start && position < end) {
+          setActiveSection(id);
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close menu when clicking a link
+  const handleNavClick = () => setMenuOpen(false);
 
   return (
     <header className="header">
       <div className="header-title">
-        <h2>AJIBADE DAN .A.</h2>
+        <h2 className="brand-name">AJIBADE DAN. A.</h2>
       </div>
 
-      {/* Hamburger Icon */}
-      <div 
-        className={`hamburger-menu ${menuOpen ? 'open' : ''}`} 
+      {/* Hamburger Menu */}
+      <button
+        className={`hamburger ${menuOpen ? "open" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation"
       >
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
 
       {/* Navigation */}
-      <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
-        <a className={`nav-link ${activeSection === 'hero' ? 'active' : ''}`} href="#hero" onClick={() => setMenuOpen(false)}>HOME |</a>
-        <a className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} href="#about" onClick={() => setMenuOpen(false)}>ABOUT |</a>
-        <a className={`nav-link ${activeSection === 'tech-stack' ? 'active' : ''}`} href="#tech-stack" onClick={() => setMenuOpen(false)}>TECH STACK |</a>
-        <a className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} href="#contact" onClick={() => setMenuOpen(false)}>CONTACT |</a>
+      <nav className={`nav ${menuOpen ? "open" : ""}`}>
+        {[
+          { id: "hero", label: "HOME" },
+          { id: "about", label: "ABOUT" },
+          { id: "tech-stack", label: "TECH STACK" },
+          { id: "contact", label: "CONTACT" },
+        ].map((item, index) => (
+          <React.Fragment key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className={`nav-link ${
+                activeSection === item.id ? "active" : ""
+              }`}
+              onClick={handleNavClick}
+            >
+              {item.label}
+            </a>
 
-        {/* Extra pages
-        <a className="nav-link" href="/portfolio" onClick={() => setMenuOpen(false)}>PORTFOLIO</a>
-        <a className="nav-link" href="/blog" onClick={() => setMenuOpen(false)}>BLOG</a>
-        <a className="nav-link" href="/services" onClick={() => setMenuOpen(false)}>SERVICES</a> */}
+            {/* remove | element at end */}
+            {index !== 3 && <span className="divider">|</span>}
+          </React.Fragment>
+        ))}
       </nav>
     </header>
   );
