@@ -28,7 +28,7 @@ function App() {
       <AboutSection />
       <TechStack />
       <Portfolio />
-      <ContactPage />
+      {/* <ContactPage /> */}
       <Footer />
 
       {/* Scroll Indicator */}

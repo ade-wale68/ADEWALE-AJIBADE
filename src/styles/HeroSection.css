@@ -1,59 +1,11 @@
 /* ---------------------------------
-   HERO SECTION
+   SOCIAL ICONS
 ----------------------------------*/
 
-.hero-section {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 3rem;
-  background-color: #46612c; /* main green background */
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Libre Franklin', sans-serif;
-}
-
-/* Hero Image Container */
-.hero-image-wrapper {
-  flex: 1;
-  z-index: 1;
-}
-
-.hero-image {
-  width: 65%;
-  max-width: 420px;
-  border-radius: 30px 200px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 90px;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Hero Text */
-.hero-content {
-  flex: 1;
-  padding-left: 2rem;
-  z-index: 2;
-}
-
-.hero-content p {
-  font-size: 3.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: #f0db4f; /* matching highlighted yellow */
-  text-transform: capitalize;
-}
-
-.highlighted-name {
-  color: #fff; /* make name stand out */
-}
-
-/* Social Links */
 .social-links1 {
   display: flex;
   gap: 2rem;
+  justify-content: flex-start;
   margin-top: 1rem;
 }
 
@@ -68,20 +20,116 @@
   transform: scale(1.25);
 }
 
-/* CTA Button */
+.social-icon1 {
+  width: 45px;
+  height: 45px;
+  transition: 0.3s ease;
+}
+
+
+/* ---------------------------------
+   ANIMATIONS
+----------------------------------*/
+
+.floating-img {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+
+/* ---------------------------------
+   HERO SECTION
+----------------------------------*/
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  background-color: #46612c;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Image Container */
+.img1 {
+  z-index: 1;
+  flex: 1;
+}
+
+.hero-section img {
+  width: 65%;
+  max-width: 420px;
+  border-radius: 30px 200px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+/* Hero Text */
+.hero-content {
+  flex: 1;
+  padding-left: 2rem;
+  z-index: 2;
+}
+
+.hero-content p {
+  text-transform: capitalize;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+
+/* ---------------------------------
+   CTA BUTTON
+----------------------------------*/
+
 .border-wrapper {
   display: inline-block;
   margin-top: 1.2rem;
   padding: 2px;
   border-radius: 20px;
-  background: linear-gradient(90deg, #3ba74f, #46612c, #3ba74f); /* green gradient */
+  background: linear-gradient(90deg,
+    #ff0057,
+    #ff7b00,
+    #ffea00,
+    #00ff85,
+    #00c3ff,
+    #bd00ff,
+    #ff0057
+  );
+  background-size: 400% 400%;
   animation: gradientFlow 7s linear infinite;
 }
 
 .border-content {
   display: block;
   padding: 0.8em 1.8em;
-  background: linear-gradient(135deg, #1e682e, #3ba74f); /* green gradient CTA */
+  background: linear-gradient(135deg, #1e682e, #3ba74f);
   border-radius: 16px;
   color: #fff;
   font-size: 1.2rem;
@@ -93,34 +141,29 @@
   transform: scale(1.06);
 }
 
-/* Decorative Hollow Square */
+
+/* ---------------------------------
+   DECORATIVE HOLLOW SQUARE
+----------------------------------*/
+
 .hollow-square {
   position: absolute;
   top: 25%;
   left: 12%;
   width: 420px;
   height: 420px;
-  border: 8px solid #3ba74f;
+  border: 8px solid #2d4d21;
   opacity: 0.2;
   transform: rotate(8deg);
   z-index: 0;
 }
 
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
-}
 
 /* ---------------------------------
    RESPONSIVE DESIGN
 ----------------------------------*/
 
+/* Tablets & Laptops */
 @media (max-width: 1024px) {
   .hero-section {
     flex-direction: column;
@@ -137,7 +180,7 @@
     font-size: 2.8rem;
   }
 
-  .hero-image {
+  .hero-section img {
     width: 55%;
   }
 
@@ -146,8 +189,9 @@
   }
 }
 
+/* Tablets & Large Phones */
 @media (max-width: 768px) {
-  .hero-image {
+  .hero-section img {
     width: 60%;
   }
 
@@ -161,17 +205,18 @@
   }
 }
 
+/* Small Phones */
 @media (max-width: 480px) {
   .hero-section {
     padding: 1.5rem;
   }
 
-  .hero-image {
+  .hero-section img {
     width: 85%;
   }
 
   .hero-content p {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .border-content {
