@@ -5,29 +5,17 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="footer-container">
-                <p className="footer-text">
-                    &copy; {new Date().getFullYear()} Daniel Ajibade. All rights reserved.
-                </p>
-                <div className="footer-social">
-                    <a
-                        href="https://github.com/yourusername"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub"
-                    >
-                        <FaGithub className="footer-icon" />
+            <div className="footer-content">
+                <p>&copy; {new Date().getFullYear()} Daniel Ajibade. All rights reserved.</p>
+                <div className="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                        <FaGithub className="social-icon" /> GitHub
                     </a>
-                    <a
-                        href="https://linkedin.com/in/yourusername"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                    >
-                        <FaLinkedin className="footer-icon" />
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="social-icon" /> LinkedIn
                     </a>
-                    <a href="mailto:your.email@example.com" aria-label="Email">
-                        <FaEnvelope className="footer-icon" />
+                    <a href="mailto:your.email@example.com">
+                        <FaEnvelope className="social-icon" /> Contact
                     </a>
                 </div>
             </div>

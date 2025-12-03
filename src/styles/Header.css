@@ -16,6 +16,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.hero-section.scrolled {
+  /* background-color: rgba(70, 97, 44, 0.0); fully transparent */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* subtle shadow */
+}
+
 /* Brand Name */
 .brand-name {
   font-size: 1.4rem;

@@ -4,12 +4,16 @@ import "../styles/Header.css";
 const Header = () => {
   const [activeSection, setActiveSection] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Highlight active section on scroll
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["hero", "about", "tech-stack", "contact"];
       const position = window.scrollY + 120;
+
+      // Toggle scrolled class
+      setScrolled(window.scrollY > 50);
 
       sections.forEach((id) => {
         const section = document.getElementById(id);
@@ -28,11 +32,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu when clicking a link
   const handleNavClick = () => setMenuOpen(false);
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-title">
         <h2 className="brand-name">AJIBADE DANIEL. A.</h2>
       </div>
@@ -66,8 +69,6 @@ const Header = () => {
             >
               {item.label}
             </a>
-
-            {/* remove | element at end */}
             {index !== 3 && <span className="divider">|</span>}
           </React.Fragment>
         ))}
