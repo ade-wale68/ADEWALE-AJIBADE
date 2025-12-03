@@ -1,33 +1,14 @@
 .tech-stack {
-    height: 96vh;
+    min-height: 96vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(135deg, #1a1a1a, #333); Dark gradient background */
+    background: #1a1a1a; /* Darker background for contrast */
     text-align: center;
     padding: 2rem;
-    color: #fff; /* White text for contrast */
+    color: #fff;
 }
-.fancy-hr {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 2rem 0;
-}
-.fancy-hr::before,
-.fancy-hr::after {
-  content: '';
-  flex: 1;
-  border-bottom: 2px solid #ccc;
-}
-.fancy-hr span {
-  padding: 0 1rem;
-  font-size: 1.2rem;
-  color: #f0db4f;
-  font-weight: bold;
-}
-
 
 .tech-stack .content {
     margin-bottom: 2rem;
@@ -35,53 +16,123 @@
 
 .tech-stack h1 {
     font-size: 3rem;
-    color: #f0db4f; /* Highlighted yellow color */
-    margin-bottom: 1rem;
+    color: #f0db4f; /* Highlighted yellow */
+    margin-bottom: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .tech-stack p {
     font-size: 1.2rem;
-    color: #ccc; /* Light gray for secondary text */
+    color: #ccc;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     line-height: 1.6;
 }
 
+/* Fancy Divider */
+.fancy-hr {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+.fancy-hr::before,
+.fancy-hr::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid #555;
+}
+
+.fancy-hr span {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #f0db4f;
+    font-weight: bold;
+}
+
+/* Tech Grid */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1.5rem;
     justify-items: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
 }
 
+/* Tech Card */
 .tech-item {
-    background: #222; /* Dark background for cards */
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-    color: #fff; /* White text for contrast */
+    background: #222;
+    border-radius: 15px;
+    padding: 1.2rem;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tech-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7); /* Enhanced hover effect */
+    transform: translateY(-7px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.7);
 }
 
+/* Tech Icon */
 .tech-icon {
     font-size: 2.5rem;
-    color: #f0db4f; /* Highlighted yellow for icons */
+    color: #f0db4f;
     margin-bottom: 0.5rem;
 }
 
 .tech-item span {
     font-size: 1rem;
-    color: #ccc; /* Light gray for text */
+    color: #ccc;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tech-stack h1 {
+        font-size: 2.2rem;
+    }
+
+    .tech-stack p {
+        font-size: 1rem;
+    }
+
+    .tech-item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tech-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-stack h1 {
+        font-size: 1.8rem;
+    }
+
+    .tech-stack p {
+        font-size: 0.9rem;
+    }
+
+    .tech-item {
+        width: 90px;
+        height: 90px;
+    }
+
+    .tech-icon {
+        font-size: 1.7rem;
+    }
 }
