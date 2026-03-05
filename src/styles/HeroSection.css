@@ -295,7 +295,8 @@
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 0.1rem;
+    width: 100%;
   }
 
   /* .img1 img {
@@ -331,6 +332,7 @@
 /* Adjustments for iPhone 12 Mini (375px width) */
 @media (max-width: 375px) {
   .hero-section {
+    width: 100%;
     padding: 1rem;
   }
 
@@ -343,7 +345,8 @@
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 0.1rem;
+    width: 50%;
   }
 
   .cta-buttons {
