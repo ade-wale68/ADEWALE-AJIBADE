@@ -28,7 +28,6 @@
 .social-icon2 {
   width: 30px;
   height: 30px;
-  right
 
    transition: 0.3s ease;
   transition: 0.3s ease;
@@ -116,7 +115,7 @@
 }
 .locate {
   padding: 1rem 2rem;
-  background-color: rgba(158, 43, 43, 0.8);
+  /* background-color: rgba(158, 43, 43, 0.8); */
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -237,7 +236,7 @@
   .hero-section {
     flex-direction: column;
     text-align: center;
-    padding-top: 6rem;
+    padding-top: 4rem;
   }
 
   .hero-content {
@@ -246,11 +245,16 @@
   }
 
   .hero-content p {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 
   .hero-section img {
-    width: 55%;
+    width: 60%;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .hollow-square {
@@ -260,13 +264,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    flex-direction: column;
-    text-align: center;
     padding: 2rem;
-  }
-
-  .hero-content {
-    padding-right: 0;
   }
 
   .hero-content p {
@@ -285,10 +283,6 @@
   .img1 img {
     width: 70%;
   }
-
-  .hollow-square {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
@@ -301,14 +295,15 @@
   }
 
   .hero-content p {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
 
-  .border-content {
-    font-size: 1rem;
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .social-links1 a {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 }

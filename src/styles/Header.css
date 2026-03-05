@@ -162,3 +162,63 @@
     display: none;
   }
 }
+
+/* Adjustments for medium screens */
+@media (max-width: 1024px) {
+  .header {
+    width: 70%;
+    left: 15%;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav {
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+}
+
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+  .header {
+    width: 90%;
+    left: 5%;
+    padding: 0.8rem 1rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 480px) {
+  .header {
+    width: 100%;
+    left: 0;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+
+  .hamburger {
+    right: 10px;
+    top: 10px;
+  }
+}
