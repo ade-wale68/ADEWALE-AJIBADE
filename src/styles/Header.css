@@ -163,12 +163,35 @@
   }
 }
 
+/* Add name to header and adjust width for smaller devices */
+@media (max-width: 480px) {
+  .header {
+    /* width: 50%; */
+    left: 25%;
+    color: #000;
+    text-align: center;
+  }
+
+  .header .name {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+}
+
 /* Adjustments for medium screens */
 @media (max-width: 1024px) {
   .header {
-    width: 70%;
-    left: 15%;
-    padding: 1rem 1.5rem;
+    background-color: rgba(148, 35, 35, 0.95);
+    width: 100%;
+    /* left: 15%; */
+    /* padding: 1rem 1.5rem; */
+
+    a{
+      /* width: 10%; */
+    }
   }
 
   .nav {
@@ -183,8 +206,9 @@
 /* Adjustments for tablets */
 @media (max-width: 768px) {
   .header {
-    width: 90%;
-    left: 5%;
+    width: 70%;
+    height: 50px;
+    left: 15%;
     padding: 0.8rem 1rem;
   }
 
@@ -202,6 +226,7 @@
 /* Adjustments for mobile screens */
 @media (max-width: 480px) {
   .header {
+    background-color: rgba(148, 35, 35, 0.95);
     width: 100%;
     left: 0;
     padding: 0.5rem 0.8rem;
