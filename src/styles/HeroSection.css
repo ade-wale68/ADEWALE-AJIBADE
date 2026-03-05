@@ -336,8 +336,9 @@
     padding: 1rem;
   }
 
-  .hero-content p {
+  .hero-content  {
     font-size: 1.5rem;
+    width: 50%;
   }
 
   .hero-content h2 {
@@ -356,5 +357,10 @@
 
   .social-links1 a {
     font-size: 1.5rem;
+  }
+  .img1 {
+    width: 100%;
+    height: auto;
+    top: 10%;
   }
 }
