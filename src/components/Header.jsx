@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -8,8 +9,9 @@ const Header = () => {
 
   // Highlight active section on scroll
   useEffect(() => {
+    const sections = ["hero", "about", "tech-stack", "contact"];
+
     const handleScroll = () => {
-      const sections = ["hero", "about", "tech-stack", "contact"];
       const position = window.scrollY + 120;
 
       // Toggle scrolled class
@@ -36,13 +38,6 @@ const Header = () => {
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <div className="header-title">
-        <h2 className="brand-name">AJIBADE DANIEL. A.</h2>
-       {/* <button id="theme-toggle">Toggle Dark/Light Mode</button> */}
-
-
-      </div>
-
       {/* Hamburger Menu */}
       <button
         className={`hamburger ${menuOpen ? "open" : ""}`}
@@ -56,12 +51,12 @@ const Header = () => {
 
       {/* Navigation */}
       <nav className={`nav ${menuOpen ? "open" : ""}`}>
-        {[
-          { id: "hero", label: "HOME" },
-          { id: "about", label: "ABOUT" },
-          { id: "tech-stack", label: "TECH STACK" },
-          { id: "contact", label: "CONTACT" },
-        ].map((item, index) => (
+        {([
+          { id: "hero", label: "HOME", icon: "fas fa-home" },
+          { id: "about", label: "ABOUT", icon: "fas fa-user" },
+          { id: "tech-stack", label: "TECH STACK", icon: "fas fa-laptop-code" },
+          { id: "contact", label: "CONTACT", icon: "fas fa-envelope" },
+        ]).map((item, index) => (
           <React.Fragment key={item.id}>
             <a
               href={`#${item.id}`}
@@ -70,7 +65,7 @@ const Header = () => {
               }`}
               onClick={handleNavClick}
             >
-              {item.label}
+              <i className={item.icon}></i> {item.label}
             </a>
             {index !== 3 && <span className="divider">|</span>}
           </React.Fragment>
